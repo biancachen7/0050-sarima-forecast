@@ -70,11 +70,3 @@ The AIC difference is negligible (0.5) while the simpler model has one parameter
 ```
 
 To reproduce: `Rscript 0050_sarima.R` (data is included; `Rscript get_data.R` re-downloads it from TWSE).
-
----
-
-## 中文摘要
-
-以 R 對元大台灣 50（0050）2022/01/03–2023/05/04 共 312 筆日收盤價建立 SARIMA 模型。原始資料經 DF / ADF / PP 三種單根檢定均不平穩（p > 0.05），一階差分後轉為平穩（p = 0.01）。以週期 5（一週五個交易日）搜尋季節性階數，在殘差通過 Ljung-Box 白噪音檢定的模型中比較 AIC 與 BIC，最終選擇參數最少的 **ARIMA(0,1,0)(0,0,1)[5]**。以前 300 筆訓練、後 12 筆驗證，實際值全數落在 95% 預測區間內。結論：短期股價難以預測，建議以定期定額方式長期投資。
-
-課程專題（淡江大學統計系時間序列分析，2023）。
